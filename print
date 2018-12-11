@@ -1,0 +1,16 @@
+#!usr/bin/env python
+
+# enconding = utf-8
+import requests
+import json
+
+url = 'http://localhost:8080/oService/plugins/warehouse/rmsmtwarehouseaddress/findPage2EasyUI.ilf'
+def get_data(url):
+    param = {'conditions':'[{"name":"city_name","value":""}]','page':1,'rows':25,'sort':'','order':''}
+    data = requests.get(url,params=param)
+    print(data.text)
+
+
+
+if __name__ == '__main__':
+    get_data(url)
